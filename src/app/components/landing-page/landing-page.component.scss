@@ -1,0 +1,47 @@
+section {
+    background-image: url("/assets/resort.png");
+    background-size: cover;
+    background-position: center;
+    h1,
+    h2 {
+        color: white;
+    }
+    div.search {
+        display: flex;
+        flex-direction: row;
+        background-color: white;
+        height: 60px;
+        width: 600px;
+        border-radius: 50px;
+        align-items: center;
+        padding: 10px;
+        form {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            .mat-form-field {
+                display: flex;
+                width: 100%;
+                align-items: center;
+                .mat-form-field-infix {
+                    display: flex !important;
+                }
+            }
+        }
+        div.iconBackground {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: black;
+            width: 50px;
+            height: 50px;
+            border-radius: 50px;
+            mat-icon {
+                color: white;
+                background-color: black;
+                font-size: 25px;
+            }
+        }
+    }
+}

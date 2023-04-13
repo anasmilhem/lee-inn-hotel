@@ -1,0 +1,22 @@
+<section class="section is-large">
+    <h1 class="title">Book Now</h1>
+    <h2 class="subtitle">
+        The Ultimate Getaway: Indulge in Our Oasis of Relaxation and Rejuvenation
+    </h2>
+
+
+    <div class="search">
+        <form>
+            <mat-form-field class="datePicker">
+                <mat-label>Check In</mat-label>
+                <input matInput [matDatepicker]="picker">
+                <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+
+            <div class="iconBackground">
+                <mat-icon>search</mat-icon>
+            </div>
+        </form>
+    </div>
+</section>

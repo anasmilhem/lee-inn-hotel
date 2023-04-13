@@ -1,1 +1,32 @@
-/* You can add global styles to this file, and also import other style files */
+// /* You can add global styles to this file, and also import other style files */
+// @use '@angular/material' as mat;
+// @include mat.legacy-typography-hierarchy(mat.define-legacy-typography-config());
+// @include mat.all-legacy-component-typographies();
+// @include mat.core();
+// // Light palette
+// $light-primary: mat.define-palette(mat.$blue-palette);
+// $light-accent: mat.define-palette(mat.$blue-grey-palette, A200, A100, A400);
+// $light-warn: mat.define-palette(mat.$red-palette);
+// $light-theme: mat.define-light-theme(( color: ( primary: $light-primary, accent: $light-accent, warn: $light-warn, ), ));
+// @include mat.all-component-themes($light-theme);
+// .cdk-global-scrollblock {
+//     overflow: hidden;
+// }
+// .mat-mdc-tab-group {
+//     height: 100%;
+//     width: 100%;
+//     .mat-mdc-tab-body-wrapper {
+//         height: 100%;
+//     }
+// }
+$footer-background-color: rgb(245, 245, 245);
+@import "node_modules/bulma/bulma.sass";
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
