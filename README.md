@@ -1,4 +1,6 @@
-# LeeInnHotel
+# LeeInnHotel for IS 606
+
+By Anas Milhem and Alvaro Sanz
 
 
 
