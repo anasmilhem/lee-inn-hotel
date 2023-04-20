@@ -1,22 +1,81 @@
-<section class="section is-large">
+<section class="section is-large banner">
     <h1 class="title">Book Now</h1>
     <h2 class="subtitle">
         The Ultimate Getaway: Indulge in Our Oasis of Relaxation and Rejuvenation
     </h2>
 
-
-    <div class="search">
-        <form>
-            <mat-form-field class="datePicker">
-                <mat-label>Check In</mat-label>
-                <input matInput [matDatepicker]="picker">
-                <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
-                <mat-datepicker #picker></mat-datepicker>
-            </mat-form-field>
-
-            <div class="iconBackground">
+    <form [formGroup]="searchForm" (ngSubmit)="onSubmit()" class="search">
+        <div class="dateInput">
+            <label>Check In</label>
+            <input formControlName="checkIn" class="input" type="date">
+        </div>
+        <span class="vertical-line"></span>
+        <div class="dateInput">
+            <label>Check Out</label>
+            <input formControlName="checkOut" class="input" type="date">
+        </div>
+        <span class="vertical-line"></span>
+        <div class="guessInput">
+            <label>Rooms</label>
+            <input formControlName="rooms" class="input" type="number" placeholder="0">
+        </div>
+        <span class="vertical-line"></span>
+        <div class="guessInput">
+            <label>Guests</label>
+            <input formControlName="guests" class="input" type="number" placeholder="0">
+        </div>
+        <div class="iconBackground">
+            <button type="submit" class="search-button">
                 <mat-icon>search</mat-icon>
+            </button>
+        </div>
+    </form>
+
+</section>
+
+<section class="section is-medium amenities">
+    <div class="amenities-header">
+        <div class="amenitiesInfo">
+            <h1>Our Amenities</h1>
+            <p>
+                Discover the ultimate beach resort experience, where comfort meets coastal bliss. Our spacious guest
+                rooms and suites boast breathtaking ocean views, plush bedding, and complimentary Wi-Fi. Savor
+                mouthwatering cuisine at our oceanfront restaurants or
+                unwind with a refreshing cocktail at our beachside bar. Rejuvenate at our tranquil spa or stay active at
+                our state-of-the-art fitness center. With our pristine private beach, sparkling pools, and exciting
+                water sports, our resort is the
+                perfect tropical paradise for a relaxing and unforgettable getaway.
+            </p>
+        </div>
+
+        <div>
+            <img src="/assets/gym.png">
+        </div>
+    </div>
+    <div class="amenities-cards">
+        <div class="card">
+            <div class="card-image">
+                <figure class="image is-4by3">
+                    <img src="/assets/pool.png" alt="Placeholder image">
+                </figure>
             </div>
-        </form>
+        </div>
+
+        <div class="card">
+            <div class="card-image">
+                <figure class="image is-4by3">
+                    <img src="/assets/spa.png" alt="Placeholder image">
+                </figure>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-image">
+                <figure class="image is-4by3">
+                    <img src="/assets/beach.png" alt="Placeholder image">
+                </figure>
+            </div>
+        </div>
+
     </div>
 </section>

@@ -1,0 +1,52 @@
+<div class="container">
+    <div class="displayTable">
+        <div class="displayTableCell">
+            <div class="authBlock box">
+                <h3 class="title is-3">Sign In</h3>
+                <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+                    <div class="field">
+                        <div class="control has-icons-left">
+                            <input type="text" formControlName="userName" class="input" placeholder="Email" required>
+                            <span class="icon is-small is-left">
+                                <i class="fa-solid fa-envelope"></i>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="control has-icons-left">
+                            <input type="password" formControlName="userPassword" class="input" placeholder="Password" required>
+                            <span class="icon is-small is-left">
+                                <i class="fas fa-envelope"></i>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="control">
+                            <button type="submit" class="button is-primary" [disabled]="loginForm.invalid">Log
+                                in</button>
+                        </div>
+                    </div>
+                </form>
+                <div class="or has-text-centered">
+                    <span>Or</span>
+                </div>
+                <div class="field">
+                    <div class="control">
+                        <button type="button" class="button is-google" (click)="googleSignIn()">
+                            <span class="icon">
+                                <i class="fa brands fa-google"></i>
+                            </span>
+                            <span>Log in with Google</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="has-text-centered">
+                    <a class="redirect" routerLink="/forgot-password">Forgot Password?</a>
+                </div>
+            </div>
+            <div class="redirectToLogin has-text-centered">
+                <span>Don't have an account?<a class="redirect" routerLink="/sign-up"> Sign Up</a></span>
+            </div>
+        </div>
+    </div>
+</div>

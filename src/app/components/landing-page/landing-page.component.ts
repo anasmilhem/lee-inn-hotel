@@ -1,11 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatIconModule } from '@angular/material/icon';
-import { MatInputModule } from '@angular/material/input';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatDatepickerModule } from '@angular/material/datepicker';
-import { MatNativeDateModule } from '@angular/material/core';
-import { DateAdapter } from '@angular/material/core';
+import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { Router, RouterModule } from '@angular/router';
+import { RoomService } from 'src/app/shared/services/room.service';
+import { Room } from 'src/app/shared/models/room';
 
 
 @Component({
@@ -14,21 +13,29 @@ import { DateAdapter } from '@angular/material/core';
   imports: [
     CommonModule,
     MatIconModule,
-    MatInputModule,
-    MatFormFieldModule,
-    MatDatepickerModule,
-    MatNativeDateModule
+    ReactiveFormsModule,
+    RouterModule
   ],
   providers: [
   ],
   templateUrl: './landing-page.component.html',
   styleUrls: ['./landing-page.component.scss']
 })
-export class LandingPageComponent implements OnInit {
+export class LandingPageComponent {
+  searchForm: FormGroup;
 
-  constructor() { }
+  constructor(private fb: FormBuilder, private router: Router, private roomService: RoomService) {
+    this.searchForm = this.fb.group({
+      checkIn: [''],
+      checkOut: [''],
+      rooms: [''],
+      guests: ['']
+    });
+  }
 
-  ngOnInit(): void {
+  onSubmit() {
+    // Navigate to the room search results page and pass the form data as query params
+    this.router.navigate(['/room-search'], { queryParams: this.searchForm.value });
   }
 
 }

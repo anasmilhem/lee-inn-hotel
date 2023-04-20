@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "arlingtoninn": {
+      "hosting": {
+        "lee-inn-hotel": [
+          "arlingtoninn"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "arlingtoninn"
+  }
+}

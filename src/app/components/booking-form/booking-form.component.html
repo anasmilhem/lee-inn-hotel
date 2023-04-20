@@ -1,0 +1,43 @@
+<div *ngIf="room">
+    <section class="section">
+        <div class="container">
+            <h2 class="title">{{ room.name }}</h2>
+            <p class="subtitle">{{ room.description }}</p>
+            <img [src]="room.images[0]" alt="{{ room.name }}" class="image">
+            <!-- Display other room metadata here -->
+
+            <form [formGroup]="bookingForm" (ngSubmit)="onSubmit()" class="box">
+                <input type="hidden" formControlName="roomId">
+                <div class="field">
+                    <label for="checkIn" class="label">Check-in:</label>
+                    <div class="control">
+                        <input type="date" formControlName="checkIn" id="checkIn" class="input">
+                    </div>
+                </div>
+                <div class="field">
+                    <label for="checkOut" class="label">Check-out:</label>
+                    <div class="control">
+                        <input type="date" formControlName="checkOut" id="checkOut" class="input">
+                    </div>
+                </div>
+                <div class="field">
+                    <label for="rooms" class="label">Rooms:</label>
+                    <div class="control">
+                        <input type="number" formControlName="rooms" id="rooms" class="input">
+                    </div>
+                </div>
+                <div class="field">
+                    <label for="guests" class="label">Guests:</label>
+                    <div class="control">
+                        <input type="number" formControlName="guests" id="guests" class="input">
+                    </div>
+                </div>
+                <div class="field">
+                    <div class="control">
+                        <button type="submit" class="button is-primary">Book</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+</div>

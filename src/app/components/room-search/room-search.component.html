@@ -1,0 +1,41 @@
+<section class="section">
+    <div class="container">
+        <div class="columns is-multiline">
+            <div class="column is-one-third" *ngFor="let room of rooms">
+                <div class="card">
+                    <div class="card-image">
+                        <figure class="image is-4by3">
+                            <img [src]="room.images[currentImageIndex[room.id]]" alt="Room image">
+                        </figure>
+                        <div class="image-slider-buttons">
+                            <button mat-icon-button class="prev-button" (click)="previousImage(room.id)">
+                                <mat-icon>chevron_left</mat-icon>
+                            </button>
+                            <button mat-icon-button class="next-button" (click)="nextImage(room.id)">
+                                <mat-icon>chevron_right</mat-icon>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <div class="media">
+                            <div class="media-content">
+                                <p class="title is-4">{{ room.name }}</p>
+                            </div>
+                        </div>
+                        <div class="content">
+                            <p>{{ room.description }}</p>
+                            <p><strong>Price per night:</strong> {{ room.price }}</p>
+                            <p><strong>Guests:</strong> {{ room.guests }}</p>
+                            <div class="stars">
+                                <mat-icon *ngFor="let star of [].constructor(room.ratings)">star</mat-icon>
+                                <mat-icon *ngFor="let star of [].constructor(5 - room.ratings)">star_border</mat-icon>
+                            </div>
+                            <button class="button is-primary book-now-button" (click)="bookRoom(room)">Book Now</button>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,4 +1,21 @@
-:host {
-    display: flex;
-    flex-direction: column;
+html,
+body {
+    height: 100%;
+}
+
+.wrapper {
+    min-height: 100%;
+    margin-bottom: -100px;
+    /* 100px is the height of the footer */
+    padding-bottom: 100px;
+    /* 100px is the height of the footer */
+}
+
+app-footer {
+    position: relative;
+    height: 100px;
+    /* set a fixed height for the footer */
+    margin-top: -100px;
+    /* 100px is the height of the footer */
+    clear: both;
 }

@@ -1,4 +1,4 @@
-section {
+section.banner {
     background-image: url("/assets/resort.png");
     background-size: cover;
     background-position: center;
@@ -6,42 +6,84 @@ section {
     h2 {
         color: white;
     }
-    div.search {
+    form.search {
         display: flex;
         flex-direction: row;
         background-color: white;
-        height: 60px;
-        width: 600px;
+        height: 80px;
+        width: 800px;
         border-radius: 50px;
         align-items: center;
+        justify-content: space-evenly;
         padding: 10px;
-        form {
+        .vertical-line {
+            display: inline-block;
+            border-left: 1px solid #ccc;
+            margin: 0 10px;
+            height: 50%;
+        }
+        div {
             display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 100%;
-            .mat-form-field {
-                display: flex;
-                width: 100%;
-                align-items: center;
-                .mat-form-field-infix {
-                    display: flex !important;
-                }
+            flex-direction: column;
+            label {
+                margin-left: 11px;
+            }
+            input {
+                border: hidden;
+                box-shadow: none;
             }
         }
-        div.iconBackground {
-            display: flex;
-            justify-content: center;
+        .search-button {
+            background-color: #3498db;
+            border: none;
+            color: #ffffff;
+            cursor: pointer;
+            font-size: inherit;
+            padding: 8px;
+            border-radius: 50%;
+            outline: none;
+            transition: all 0.3s ease;
+        }
+        .search-button:focus,
+        .search-button:hover {
+            background-color: #00695c;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .iconBackground {
+            display: inline-flex;
             align-items: center;
-            background-color: black;
-            width: 50px;
-            height: 50px;
-            border-radius: 50px;
-            mat-icon {
-                color: white;
-                background-color: black;
-                font-size: 25px;
+            justify-content: center;
+        }
+    }
+}
+
+section.amenities {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    div.amenities-header {
+        display: flex;
+        div.amenitiesInfo {
+            gap: 10px;
+            padding: 60px;
+            h1 {
+                font-size: 30px;
             }
+        }
+        img {
+            border-radius: 10px;
+        }
+    }
+    div.amenities-cards {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        gap: 10px;
+        .card {
+            width: calc(100%/3);
+        }
+        .card-header-title {
+            justify-content: center;
         }
     }
 }
